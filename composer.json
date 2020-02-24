@@ -1,0 +1,22 @@
+{
+    "name": "anso/base",
+    "description": "Base classes for anso/http and anso/console frameworks.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrij Kshanovskij",
+            "email": "andrewafk2000@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4",
+        "anso/framework/contract": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anso\\Framework\\Base\\": "src\\"
+        }
+    }
+}
