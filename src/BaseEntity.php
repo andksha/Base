@@ -4,9 +4,18 @@ namespace Anso\Framework\Base;
 
 use DateTime;
 use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
 
 abstract class BaseEntity
 {
+    /**
+     * @Id()
+     * @Column(type="integer")
+     * @GeneratedValue
+     */
+    protected $id;
+
     /**
      * @Column(type="datetime")
      * @var DateTime
@@ -28,5 +37,10 @@ abstract class BaseEntity
     public function getCreatedAt()
     {
         return $this->created_at->format('H:i:s Y-m-d');
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 }
