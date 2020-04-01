@@ -6,8 +6,9 @@ use DateTime;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
+use JsonSerializable;
 
-abstract class BaseEntity
+abstract class BaseEntity implements JsonSerializable
 {
     /**
      * @Id()
