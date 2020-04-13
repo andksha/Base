@@ -2,8 +2,8 @@
 
 namespace Anso\Framework\Base;
 
-use Anso\Framework\Contract\Application;
-use Anso\Framework\Contract\Container;
+use Anso\Framework\Base\Contract\Application;
+use Anso\Framework\Base\Contract\Container;
 
 abstract class BaseApp implements Application
 {
