@@ -4,6 +4,7 @@ namespace Anso\Framework\Base;
 
 use Anso\Framework\Base\Contract\ExceptionHandler;
 use ErrorException;
+use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
 
 class Configuration
 {
@@ -37,5 +38,28 @@ class Configuration
     public function exceptionHandler(): ExceptionHandler
     {
         return include($this->configPath . "/exception_handler.php");
+    }
+
+    public function getValue(string $filename, string $key)
+    {
+        if ($array = file_get_contents($this->checkExtension($filename))) {
+            throw new FileNotFoundException($filename);
+        }
+
+        return $array[$key] ?? null;
+    }
+
+    public function getFile(string $filename): array
+    {
+        if ($array = file_get_contents($this->checkExtension($filename))) {
+            throw new FileNotFoundException($filename);
+        }
+
+        return $array;
+    }
+
+    private function checkExtension(string $filename)
+    {
+        return strstr('test.php', '.') ? $filename : $filename . '.php';
     }
 }
