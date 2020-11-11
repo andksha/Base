@@ -11,8 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.4",
-        "anso/contract": "*"
+        "php": "^7.4"
     },
     "autoload": {
         "psr-4": {
